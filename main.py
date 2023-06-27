@@ -1,5 +1,5 @@
 '''
-Jogo Tetris em Python
+Clone do Jogo Tetris em Python
 Utilizando a biblioteca: PyGame
 
 Criado por: Carlos Alberto Morais Moura Filho
@@ -14,9 +14,9 @@ Atualizado em: 27/06/2022
 # pylint: disable=no-name-in-module
 
 # Bibliotecas
-import pygame
-from os import environ, path
-from sys import exc_info as info, exit, platform
+import pygame, sys, os
+import constants
+
 
 
 def close_game():
@@ -24,21 +24,36 @@ def close_game():
     pygame.display.quit()
     pygame.mixer.quit()
     pygame.quit()
-    exit()
+    sys.exit()
 
 def main():
     '''Função principal que trata de toda a execução do jogo'''
     # Centraliza a janela do jogo no monitor
-    environ['SDL_VIDEO_CENTERED'] = '1'
+    os.environ['SDL_VIDEO_CENTERED'] = '1'
     pygame.init()
     pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
     # Criação da janela
+    screen = pygame.display.set_mode((constants.LARGURA, constants.ALTURA))
+    pygame.display.set_caption(constants.TITULO)
+    clock = pygame.time.Clock()
+    GAME_UPDATE = pygame.USEREVENT
+    pygame.time.set_timer(GAME_UPDATE, 200)
+    while True:
+        #Event handling
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+        #Updating positions
+        #Drawing objects
+        screen.fill(constants.dark_blue)
+        pygame.display.update()
+        clock.tick(constants.FPS)
 
 
 try:
     if __name__ == "__main__":
-        while True:
-            main()
+         main()
 except SyntaxError as syntax_exception:
     print(f'Oops! Ocorreu um erro de sintaxe no código.\n\
         __class__ = {syntax_exception.__class__}\n\
