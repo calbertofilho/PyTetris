@@ -1,12 +1,12 @@
 #Dimensões da tela
-LARGURA = 300
-ALTURA = 600
+WIDTH = 300
+HEIGHT = 600
 
 #Título do jogo
-TITULO = 'PyTetris'
+TITLE = 'PyTetris'
 
 #FPS
 FPS = 60
 
-#CORES
+#Cores
 dark_blue = (44, 44, 127)

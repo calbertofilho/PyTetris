@@ -33,8 +33,8 @@ def main():
     pygame.init()
     pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
     # Criação da janela
-    screen = pygame.display.set_mode((constants.LARGURA, constants.ALTURA))
-    pygame.display.set_caption(constants.TITULO)
+    screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
+    pygame.display.set_caption(constants.TITLE)
     clock = pygame.time.Clock()
     GAME_UPDATE = pygame.USEREVENT
     pygame.time.set_timer(GAME_UPDATE, 200)
@@ -42,8 +42,7 @@ def main():
         #Event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+                close_game()
         #Updating positions
         #Drawing objects
         screen.fill(constants.dark_blue)
