@@ -7,6 +7,3 @@ TITLE = 'PyTetris'
 
 #FPS
 FPS = 60
-
-#Cores
-dark_blue = (44, 44, 127)

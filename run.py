@@ -1,10 +1,10 @@
 '''
 Clone do Jogo Tetris em Python
 Utilizando a biblioteca: PyGame
-
+-------
 Criado por: Carlos Alberto Morais Moura Filho
 Versão: 1.0
-Atualizado em: 27/06/2022
+Atualizado em: 17/03/2022
 '''
 # pylint: disable=no-member
 # pylint: disable=too-many-locals
@@ -13,14 +13,18 @@ Atualizado em: 27/06/2022
 # pylint: disable=c-extension-no-member
 # pylint: disable=no-name-in-module
 
+
+
 # Bibliotecas
 import pygame, sys, os
 import constants
+from Classes.grid import Grid
+from Classes.colors import Colors
 
 
 
 def close_game():
-    '''Função que encerra todas as bibliotecas e fecha o jogo'''
+    '''Função que encerra todas os módulos e bibliotecas utilizados e fecha a janela do jogo'''
     pygame.display.quit()
     pygame.mixer.quit()
     pygame.quit()
@@ -30,25 +34,35 @@ def main():
     '''Função principal que trata de toda a execução do jogo'''
     # Centraliza a janela do jogo no monitor
     os.environ['SDL_VIDEO_CENTERED'] = '1'
+    # Inicia o módulo PyGame
     pygame.init()
+    # Inicia o mixer de áudio
     pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
     # Criação da janela
     screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
+    # Seta o título do jogo na janela
     pygame.display.set_caption(constants.TITLE)
+    # 
     clock = pygame.time.Clock()
+    # 
+    game_grid = Grid()
+    game_grid.print_grid()
+    # 
     GAME_UPDATE = pygame.USEREVENT
     pygame.time.set_timer(GAME_UPDATE, 200)
+    # 
     while True:
-        #Event handling
+        # Eventos
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 close_game()
-        #Updating positions
-        #Drawing objects
-        screen.fill(constants.dark_blue)
+        # Atuliza as posições das peças no jogo
+        # Desenha os objectos na tela
+        screen.fill(Colors.dark_blue)
+        game_grid.draw(screen)
         pygame.display.update()
+        # 
         clock.tick(constants.FPS)
-
 
 try:
     if __name__ == "__main__":
