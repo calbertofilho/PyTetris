@@ -10,7 +10,13 @@ Versão: 1.0<br />
 ## Estrutura do projeto
 ```
 → PyTetris
+   ├→ Assets
+   │   ├→ Images
+   │   │   └→ logo.png
+   │   └→ Sounds
+   │       └→ theme.wav
    ├→ Classes
+   │   ├→ colors.py
    │   └→ grid.py
    ├→ Constants
    │   ├→ config.py
