@@ -19,17 +19,8 @@ Atualizado em: 17/03/2022
 import pygame, sys, os
 from Constants.config import *
 from Constants.texts import *
-from Classes.grid import Grid
 from Classes.colors import Colors
-from Classes.Blocks.i_block import I_Block
-from Classes.Blocks.j_block import J_Block
-from Classes.Blocks.l_block import L_Block
-from Classes.Blocks.o_block import O_Block
-from Classes.Blocks.s_block import S_Block
-from Classes.Blocks.t_block import T_Block
-from Classes.Blocks.z_block import Z_Block
-
-
+from Classes.game import Game
 
 def close_game():
     '''Função que encerra todas os módulos e bibliotecas utilizados e fecha a janela do jogo'''
@@ -46,8 +37,6 @@ def main():
     pygame.init()
     # Inicia o mixer de áudio
     pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
-    pygame.mixer.Sound(os.path.join(os.getcwd(), 'Assets/sounds/theme.wav')).play(-1)
-
     # Criação da janela
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     # Seta o ícone e o título do jogo na janela
@@ -55,9 +44,8 @@ def main():
     pygame.display.set_caption(TITLE)
     # 
     clock = pygame.time.Clock()
-    # 
-    game_grid = Grid()
-    block = L_Block()
+    #
+    game = Game()
     # 
     GAME_UPDATE = pygame.USEREVENT
     pygame.time.set_timer(GAME_UPDATE, 200)
@@ -70,8 +58,7 @@ def main():
         # Atualiza as posições das peças no jogo
         # Desenha os objectos na tela
         screen.fill(Colors.dark_blue)
-        game_grid.draw(screen)
-        block.draw(screen)
+        game.draw(screen)
         pygame.display.update()
         # 
         clock.tick(FPS)
