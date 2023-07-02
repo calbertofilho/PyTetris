@@ -51,13 +51,15 @@ def main():
     game = Game()
     # 
     GAME_UPDATE = pygame.USEREVENT
-    pygame.time.set_timer(GAME_UPDATE, 200)
+    pygame.time.set_timer(GAME_UPDATE, 250)
     # 
     while True:
         # Eventos
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 close_game()
+            if event.type == GAME_UPDATE:
+                game.move_down()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     close_game()

@@ -34,7 +34,6 @@ class Block:
         if self.state == -1:
             self.state = len(self.cells) - 1
 
-
     def draw(self, screen, offset_x, offset_y):
         tiles = self.get_cell_positions()
         for tile in tiles:
