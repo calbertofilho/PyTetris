@@ -48,6 +48,9 @@ class Game:
 			self.current_block.move(-1, 0)
 		# 	self.lock_block()
 
+	def rotate(self):
+		self.current_block.rotate()
+
 	def block_inside(self):
 		tiles = self.current_block.get_cell_positions()
 		for tile in tiles:

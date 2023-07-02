@@ -61,6 +61,8 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     close_game()
+                if event.key in (pygame.K_UP, pygame.K_w, pygame.K_SPACE):
+                    game.rotate()
                 if event.key in (pygame.K_LEFT, pygame.K_a):
                     leftPressed = True
                 if event.key in (pygame.K_DOWN, pygame.K_s):
