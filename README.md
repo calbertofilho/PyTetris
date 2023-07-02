@@ -19,8 +19,18 @@ Versão: 1.0<br />
    │       ├→ success.wav
    │       └→ theme.wav
    ├→ Classes
+   │   ├→ Blocks
+   │   │   ├→ block.py
+   │   │   ├→ i_block.py
+   │   │   ├→ j_block.py
+   │   │   ├→ l_block.py
+   │   │   ├→ o_block.py
+   │   │   ├→ s_block.py
+   │   │   ├→ t_block.py
+   │   │   └→ z_block.py
    │   ├→ colors.py
-   │   └→ grid.py
+   │   ├→ grid.py
+   │   └→ position.py
    ├→ Constants
    │   ├→ config.py
    │   └→ texts.py
@@ -28,7 +38,7 @@ Versão: 1.0<br />
 ```
 
 ## Os blocos
-
+![Blocks representation](Assets/images/README.md/blocks.png)
 | Posição | I | J | L | O | S | T | Z |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | `(1, 0) (1, 1) (1, 2) (1, 3)` | `(0, 0) (1, 0) (1, 1) (1, 2)` | `(0, 2) (1, 0) (1, 1) (1, 2)` | `(0, 0) (0, 1) (1, 0) (1, 1)` | `(0, 1) (0, 2) (1, 0) (1, 1)` | `(0,1) (1,0) (1,1) (1,2)` | `(0, 0) (0, 1) (1, 1) (1, 2)` |
