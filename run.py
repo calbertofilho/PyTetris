@@ -21,6 +21,13 @@ from Constants.config import *
 from Constants.texts import *
 from Classes.grid import Grid
 from Classes.colors import Colors
+from Classes.i_block import I_Block
+from Classes.j_block import J_Block
+from Classes.l_block import L_Block
+from Classes.o_block import O_Block
+from Classes.s_block import S_Block
+from Classes.t_block import T_Block
+from Classes.z_block import Z_Block
 
 
 
@@ -50,7 +57,7 @@ def main():
     clock = pygame.time.Clock()
     # 
     game_grid = Grid()
-    game_grid.print_grid()
+    block = L_Block()
     # 
     GAME_UPDATE = pygame.USEREVENT
     pygame.time.set_timer(GAME_UPDATE, 200)
@@ -60,10 +67,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 close_game()
-        # Atuliza as posições das peças no jogo
+        # Atualiza as posições das peças no jogo
         # Desenha os objectos na tela
         screen.fill(Colors.dark_blue)
         game_grid.draw(screen)
+        block.draw(screen)
         pygame.display.update()
         # 
         clock.tick(FPS)
