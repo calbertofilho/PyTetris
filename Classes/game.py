@@ -14,10 +14,8 @@ class Game:
 		self.blocks = [I_Block(), J_Block(), L_Block(), O_Block(), S_Block(), T_Block(), Z_Block()]
 		self.current_block = self.get_random_block()
 		self.next_block = self.get_random_block()
-
 		self.game_over = False
 		self.score = 0
-
 		self.main_theme = pygame.mixer.Sound(os.path.join(os.getcwd(), 'Assets/sounds/theme.wav'))
 		self.rotate_sound = pygame.mixer.Sound(os.path.join(os.getcwd(), 'Assets/sounds/rotate.wav'))
 		self.clear_sound = pygame.mixer.Sound(os.path.join(os.getcwd(), 'Assets/sounds/clear.wav'))
