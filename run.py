@@ -21,13 +21,13 @@ from Constants.config import *
 from Constants.texts import *
 from Classes.grid import Grid
 from Classes.colors import Colors
-from Classes.i_block import I_Block
-from Classes.j_block import J_Block
-from Classes.l_block import L_Block
-from Classes.o_block import O_Block
-from Classes.s_block import S_Block
-from Classes.t_block import T_Block
-from Classes.z_block import Z_Block
+from Classes.Blocks.i_block import I_Block
+from Classes.Blocks.j_block import J_Block
+from Classes.Blocks.l_block import L_Block
+from Classes.Blocks.o_block import O_Block
+from Classes.Blocks.s_block import S_Block
+from Classes.Blocks.t_block import T_Block
+from Classes.Blocks.z_block import Z_Block
 
 
 

@@ -1,4 +1,4 @@
-from Classes.block import Block
+from Classes.Blocks.block import Block
 from Classes.position import Position
 
 class S_Block(Block):
