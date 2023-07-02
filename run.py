@@ -17,7 +17,8 @@ Atualizado em: 17/03/2022
 
 # Bibliotecas
 import pygame, sys, os
-import constants
+from Constants.config import *
+from Constants.texts import *
 from Classes.grid import Grid
 from Classes.colors import Colors
 
@@ -25,6 +26,7 @@ from Classes.colors import Colors
 
 def close_game():
     '''Função que encerra todas os módulos e bibliotecas utilizados e fecha a janela do jogo'''
+    pygame.mixer.music.stop()         
     pygame.display.quit()
     pygame.mixer.quit()
     pygame.quit()
@@ -38,10 +40,15 @@ def main():
     pygame.init()
     # Inicia o mixer de áudio
     pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
+    pygame.mixer.Sound(os.path.join(os.getcwd(), 'Assets/sounds/theme.wav')).play(-1)
+    # pygame.mixer.music.load(os.path.join(os.getcwd(), 'Assets/sounds/theme.wav'))
+    # pygame.mixer.music.play(-1)
+
     # Criação da janela
-    screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
-    # Seta o título do jogo na janela
-    pygame.display.set_caption(constants.TITLE)
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    # Seta o ícone e o título do jogo na janela
+    pygame.display.set_icon(pygame.image.load(os.path.join(os.getcwd(), 'Assets/images/icon.png')).convert_alpha())
+    pygame.display.set_caption(TITLE)
     # 
     clock = pygame.time.Clock()
     # 
@@ -62,7 +69,7 @@ def main():
         game_grid.draw(screen)
         pygame.display.update()
         # 
-        clock.tick(constants.FPS)
+        clock.tick(FPS)
 
 try:
     if __name__ == "__main__":

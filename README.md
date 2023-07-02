@@ -12,14 +12,17 @@ Versão: 1.0<br />
 → PyTetris
    ├→ Assets
    │   ├→ Images
+   │   │   ├→ icon.png
    │   │   └→ logo.png
    │   └→ Sounds
+   │       ├→ clear.wav
+   │       ├→ success.wav
    │       └→ theme.wav
    ├→ Classes
    │   ├→ colors.py
    │   └→ grid.py
    ├→ Constants
    │   ├→ config.py
-   │   └→ i18n.py
+   │   └→ texts.py
    └→ run.py
 ```
