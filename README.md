@@ -26,3 +26,69 @@ Versão: 1.0<br />
    │   └→ texts.py
    └→ run.py
 ```
+
+## Os blocos
+T<br />
+Posição 0: (0,1) (1,0) (1,1) (1,2)<br />
+Posição 1: (0,1) (1,1) (1,2) (2,1)<br />
+Posição 2: (0,1) (1,1) (1,2) (2,1)<br />
+Posição 3: (0,1) (1,0) (1,1) (2,1)
+
+```mermaid
+classDiagram
+    Block <|-- I_Block: Inheritance
+    Block <|-- J_Block: Inheritance
+    Block <|-- L_Block: Inheritance
+    Block <|-- O_Block: Inheritance
+    Block <|-- S_Block: Inheritance
+    Block <|-- T_Block: Inheritance
+    Block <|-- Z_Block: Inheritance
+
+    Block : +int id
+    Block : +int size
+    Block : +int row_offset
+    Block : +int column_offset
+    Block : +int state
+    Block : +dict cells
+
+    Block : +move()
+    Block : +list get_cell_positions()
+    Block : +rotate()
+    Block : +undo_rotation()
+    Block : +draw()
+
+    class I_Block {
+        +dict cells
+        +move()
+    }
+
+    class J_Block {
+        +dict cells
+        +move()
+    }
+
+    class L_Block {
+        +dict cells
+        +move()
+    }
+
+    class O_Block {
+        +dict cells
+        +move()
+    }
+
+    class S_Block {
+        +dict cells
+        +move()
+    }
+
+    class T_Block {
+        +dict cells
+        +move()
+    }
+
+    class Z_Block {
+        +dict cells
+        +move()
+    }
+```
