@@ -1,2 +1,2 @@
 #Título do jogo
-TITLE = 'PyTetris - Python Tetris Game'
+TITLE = 'PyTetris: Python Tetris Game'
