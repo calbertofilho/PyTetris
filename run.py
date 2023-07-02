@@ -16,7 +16,7 @@ Atualizado em: 17/03/2022
 
 
 # Bibliotecas
-import pygame, sys, os
+import os, sys, pygame
 from Constants.config import *
 from Constants.texts import *
 from Classes.colors import Colors

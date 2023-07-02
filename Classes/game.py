@@ -1,4 +1,4 @@
-import pygame, os, random
+import os, random, pygame
 from Classes.grid import Grid
 from Classes.Blocks.i_block import I_Block
 from Classes.Blocks.j_block import J_Block
