@@ -26,7 +26,6 @@ from Classes.colors import Colors
 
 def close_game():
     '''Função que encerra todas os módulos e bibliotecas utilizados e fecha a janela do jogo'''
-    pygame.mixer.music.stop()         
     pygame.display.quit()
     pygame.mixer.quit()
     pygame.quit()
@@ -41,8 +40,6 @@ def main():
     # Inicia o mixer de áudio
     pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
     pygame.mixer.Sound(os.path.join(os.getcwd(), 'Assets/sounds/theme.wav')).play(-1)
-    # pygame.mixer.music.load(os.path.join(os.getcwd(), 'Assets/sounds/theme.wav'))
-    # pygame.mixer.music.play(-1)
 
     # Criação da janela
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
