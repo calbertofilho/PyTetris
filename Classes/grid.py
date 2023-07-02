@@ -11,11 +11,16 @@ class Grid:
 
 	# Só para teste
 	def print_grid(self):
-		'''Função que testa a criação do modelo de grade para o jpgp'''
+		'''Função que testa a criação do modelo de grade para o jogo'''
 		for row in range(self.rows):
 			for column in range(self.cols):
 				print(self.grid[row][column], end = " ")
 			print()
+	# Só para teste
+	def is_inside(self, row, column):
+		if row >= 0 and row < self.rows and column >= 0 and column < self.cols:
+			return True
+		return False
 
 	def draw(self, screen):
 		for row in range(self.rows):

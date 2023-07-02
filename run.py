@@ -45,6 +45,9 @@ def main():
     # 
     clock = pygame.time.Clock()
     #
+    leftPressed = False
+    rightPressed = False
+    downPressed = False
     game = Game()
     # 
     GAME_UPDATE = pygame.USEREVENT
@@ -55,6 +58,28 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 close_game()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    close_game()
+                if event.key in (pygame.K_LEFT, pygame.K_a):
+                    leftPressed = True
+                if event.key in (pygame.K_DOWN, pygame.K_s):
+                    downPressed = True
+                if event.key in (pygame.K_RIGHT, pygame.K_d):
+                    rightPressed = True
+            if event.type == pygame.KEYUP:
+                if event.key in (pygame.K_LEFT, pygame.K_a):
+                    leftPressed = False
+                if event.key in (pygame.K_DOWN, pygame.K_s):
+                    downPressed = False
+                if event.key in (pygame.K_RIGHT, pygame.K_d):
+                    rightPressed = False
+            if leftPressed:
+                game.move_left()
+            if rightPressed:
+                game.move_right()
+            if downPressed:
+                game.move_down()
         # Atualiza as posições das peças no jogo
         # Desenha os objectos na tela
         screen.fill(Colors.dark_blue)
