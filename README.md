@@ -8,33 +8,33 @@ Versão: 1.0<br />
 Última atualização: 
 
 ## Estrutura do projeto
-```
+```shell
 → PyTetris
-   ├→ Assets
-   │   ├→ Images
-   │   │   ├→ icon.png
-   │   │   └→ logo.png
-   │   └→ Sounds
-   │       ├→ clear.wav
-   │       ├→ success.wav
-   │       └→ theme.wav
-   ├→ Classes
-   │   ├→ Blocks
-   │   │   ├→ block.py
-   │   │   ├→ i_block.py
-   │   │   ├→ j_block.py
-   │   │   ├→ l_block.py
-   │   │   ├→ o_block.py
-   │   │   ├→ s_block.py
-   │   │   ├→ t_block.py
-   │   │   └→ z_block.py
-   │   ├→ colors.py
-   │   ├→ grid.py
-   │   └→ position.py
-   ├→ Constants
-   │   ├→ config.py
-   │   └→ texts.py
-   └→ run.py
+   ├─→ Assets
+   │    ├─→ Images
+   │    │    ├─→ icon.png
+   │    │    └─→ logo.png
+   │    └─→ Sounds
+   │         ├─→ clear.wav
+   │         ├─→ success.wav
+   │         └─→ theme.wav
+   ├─→ Classes
+   │    ├─→ Blocks
+   │    │    ├─→ block.py
+   │    │    ├─→ i_block.py
+   │    │    ├─→ j_block.py
+   │    │    ├─→ l_block.py
+   │    │    ├─→ o_block.py
+   │    │    ├─→ s_block.py
+   │    │    ├─→ t_block.py
+   │    │    └─→ z_block.py
+   │    ├─→ colors.py
+   │    ├─→ grid.py
+   │    └─→ position.py
+   ├─→ Constants
+   │    ├─→ config.py
+   │    └─→ texts.py
+   └─→ run.py
 ```
 
 ## Os blocos
