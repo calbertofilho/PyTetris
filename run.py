@@ -51,19 +51,22 @@ def main():
     game = Game()
     # 
     GAME_UPDATE = pygame.USEREVENT
-    pygame.time.set_timer(GAME_UPDATE, 250)
+    pygame.time.set_timer(GAME_UPDATE, 350)
     # 
     while True:
         # Eventos
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 close_game()
-            if event.type == GAME_UPDATE:
+            if event.type == GAME_UPDATE and game.game_over == False:
                 game.move_down()
             if event.type == pygame.KEYDOWN:
+                if game.game_over == True:
+                    game.game_over = False
+                    game.reset()
                 if event.key == pygame.K_ESCAPE:
                     close_game()
-                if event.key in (pygame.K_UP, pygame.K_w, pygame.K_SPACE):
+                if event.key in (pygame.K_UP, pygame.K_w, pygame.K_SPACE) and game.game_over == False:
                     game.rotate()
                 if event.key in (pygame.K_LEFT, pygame.K_a):
                     leftPressed = True
@@ -78,11 +81,11 @@ def main():
                     downPressed = False
                 if event.key in (pygame.K_RIGHT, pygame.K_d):
                     rightPressed = False
-            if leftPressed:
+            if leftPressed and game.game_over == False:
                 game.move_left()
-            if rightPressed:
+            if rightPressed and game.game_over == False:
                 game.move_right()
-            if downPressed:
+            if downPressed and game.game_over == False:
                 game.move_down()
         # Atualiza as posições das peças no jogo
         # Desenha os objectos na tela

@@ -52,6 +52,16 @@ class Game:
 			self.grid.grid[position.row][position.column] = self.current_block.id
 		self.current_block = self.next_block
 		self.next_block = self.get_random_block()
+		self.grid.clear_full_rows()
+		if self.block_fits() == False:
+			self.game_over = True
+
+	def reset(self):
+		self.grid.reset()
+		self.blocks = [I_Block(), J_Block(), L_Block(), O_Block(), S_Block(), T_Block(), Z_Block()]
+		self.current_block = self.get_random_block()
+		self.next_block = self.get_random_block()
+		self.score = 0
 
 	def block_fits(self):
 		tiles = self.current_block.get_cell_positions()
