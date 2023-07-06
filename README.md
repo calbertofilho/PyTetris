@@ -39,7 +39,7 @@ Versão: 1.0<br />
 
 ## Os blocos
 ![Blocks representation](Assets/images/README.md/blocks.png)
-| State | I | J | L | O | S | T | Z |
+|  | I | J | L | O | S | T | Z |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | <sub><sup>(1, 0) (1, 1) (1, 2) (1, 3)</sub></sup> | <sub><sup>(0, 0) (1, 0) (1, 1) (1, 2)</sub></sup> | <sub><sup>(0, 2) (1, 0) (1, 1) (1, 2)</sub></sup> | <sub><sup>(0, 0) (0, 1) (1, 0) (1, 1)</sub></sup> | <sub><sup>(0, 1) (0, 2) (1, 0) (1, 1)</sub></sup> | <sub><sup>(0,1) (1,0) (1,1) (1,2)</sub></sup> | <sub><sup>(0, 0) (0, 1) (1, 1) (1, 2)</sub></sup> |
 | 1 | <sub><sup>(0, 2) (1, 2) (2, 2) (3, 2)</sub></sup> | <sub><sup>(0, 1) (0, 2) (1, 1) (2, 1)</sub></sup> | <sub><sup>(0, 1) (1, 1) (2, 1) (2, 2)</sub></sup> | <sub><sup>-</sub></sup> | <sub><sup>(0, 1) (1, 1) (1, 2) (2, 2)</sub></sup> | <sub><sup>(0,1) (1,1) (1,2) (2,1)</sub></sup> | <sub><sup>(0, 2) (1, 1) (1, 2) (2, 1)</sub></sup> |
